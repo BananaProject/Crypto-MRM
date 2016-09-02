@@ -102,6 +102,9 @@ void crypt_mrm_ram_swap(const char * value, char * dst_cpu, size_t size) {
 
 	cudaMemcpy(dst_cpu, dst, size, cudaMemcpyDeviceToHost);
 
+	cudaFree(src);
+	cudaFree(dst);
+
 }
 void crypt_mrm_set_ram_swap_int(int * ptr, int value) {
 	*ptr = crypt_mrm_get_ram_swap_int(value);
