@@ -86,6 +86,8 @@ __global__ void crypt_mrm_magic_bytes(char * dst, const char * src, int size) {
 
 		dst[k] = src[k] ^ (table[(table[i] + table[j]) & 255]);
 	}
+	
+	free(table);
 
 }
 
